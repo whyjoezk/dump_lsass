@@ -1,4 +1,4 @@
-﻿#define SECURITY_WIN32
+#define SECURITY_WIN32
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <iostream>
@@ -33,8 +33,6 @@ int main(int argc, char** argv) {
 	RPC_STATUS status;
 	UNICODE_STRING packageName;
 	UWORD packetLen = 0;
-	//unsigned char * pszStringBinding = NULL;
-	//RPC_CSTR pszStringBinding = NULL;
 	RPC_WSTR pszStringBinding = nullptr;
 	unsigned long ulCode;
 	unsigned long long unk1;
@@ -119,8 +117,14 @@ int main(int argc, char** argv) {
 		}
 	}
 	RpcEndExcept
-
-		return 0;
+	//RpcStringFree
+	status = RpcStringFree(&pszStringBinding);
+	if (status != 0)
+		printf("[!] RpcStringFree returns: %d\n", status);
+	status = RpcBindingFree(&default_IfHandle);
+	if (status != 0)
+		printf("[!] RpcStringFree returns: %d\n", status);
+	return 0;
 	
 }
 
