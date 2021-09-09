@@ -8,6 +8,7 @@
 [https://gist.github.com/xpn/c7f6d15bf15750eae3ec349e7ec2380e](https://gist.github.com/xpn/c7f6d15bf15750eae3ec349e7ec2380e)
 
 对于代码做了部分修改，使用vs2019编译，选择x64编译
+修复运行多次dump进程崩溃问题
 # 使用方法
 ```
 ssp_rpc_loader.exe Dll1.dll
